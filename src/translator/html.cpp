@@ -741,10 +741,6 @@ bool HTML::isContinuation(std::string_view prev, std::string_view str) const {
          options_.continuationDelimiters.find(prev.back()) == std::string::npos;
 }
 
-bool HTML::isContinuation(marian::string_view prev, marian::string_view str) const {
-  return isContinuation(std::string_view(prev.data(), prev.size()), std::string_view(str.data(), str.size()));
-}
-
 /// Selects for each token in `response.target` a best source token from
 /// `response.source` and writes this selection to `alignments`. The source
 /// token spans are used to also look at the markup applied to each token to
